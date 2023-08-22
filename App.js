@@ -20,6 +20,5 @@ const HeadingComponent = () => (
     <h2>This is HeadingComponent</h2>
   </div>
 );
-
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<HeadingComponent />); // Render the component in DOM with id root
