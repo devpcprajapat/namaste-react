@@ -1,37 +1,25 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-/* let heading = React.createElement(
-  "h1",
-  { id: "heading", msg: "message" },
-  "Hello world with react!"
+
+// React Component
+// Components are just javascript function which is return some piece of react elements or JSX
+// Components are 2 types
+// 1. Functional Component [New Way]
+// 2. Class Component [Old Way]
+
+const Title = () => {
+  return <h1 className="title">This is title Component</h1>;
+};
+
+const HeadingComponent = () => (
+  <div className="container">
+    {1000 + 2000}
+    {Title()}
+    <Title />
+    <Title></Title>
+    <h2>This is HeadingComponent</h2>
+  </div>
 );
-let root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(heading); */
 
-/**
-   <div id="parent">
-      <div id="child1">
-        <h1>I'm an H1 tag </h1>
-        <h2>I'm an H2 tag </h2>
-      </div>
-      <div id="child2">
-        <h1>I'm an H1 tag </h1>
-        <h2>I'm an H2 tag </h2>
-      </div>
-    </div>
- */
-
-let parent = React.createElement("div", { id: "parent" }, [
-  React.createElement("div", { id: "child1" }, [
-    React.createElement("h1", {}, "I'm an H1 tag"),
-    React.createElement("h2", {}, "I'm an H2 tag"),
-  ]),
-  React.createElement("div", { id: "child2" }, [
-    React.createElement("h1", {}, "I'm an another H1 tag"),
-    React.createElement("h2", {}, "I'm an another H2 tag"),
-  ]),
-]);
-console.log(parent); // object
-
-let root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(parent);
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<HeadingComponent />); // Render the component in DOM with id root
